@@ -1,6 +1,5 @@
 # Voice_Secure_Solstice
 
-Long description:
 Welcome to our innovative website that provides a unique combination of voice authentication and note-taking features, as well as secure password storage functionality. Our platform is designed to make your life easier by simplifying the process of accessing your notes and managing your passwords, while keeping your data secure.
 
 Firstly, our voice authentication technology is cutting-edge and provides a quick and convenient way to log in to your account. Instead of typing in a complicated password or going through a multi-step authentication process, all you have to do is speak into your device and our system will recognize your voice and grant you access to your notes. This feature not only saves you time but also enhances security as it eliminates the risk of someone else gaining access to your account by guessing or stealing your password.
