@@ -49,12 +49,12 @@ How to Run the project :
     python manage.py runserver  
 
 Working Module youtube Link: https://youtu.be/g3bvY4jJcRE
-![WhatsApp Image 2023-04-30 at 12 02 40](https://user-images.githubusercontent.com/126838490/235343233-71f6b03b-5212-46d0-b72e-2ba3326edffb.jpg)
 
-https://user-images.githubusercontent.com/126838490/235343083-ee54b270-71be-45dd-9b5e-b8dbc63e58b5.jpg
+![WhatsApp Image 2023-04-30 at 12 02 54](https://user-images.githubusercontent.com/126838490/235343275-f0a0d09c-3884-4205-9e39-afa2ae2f1792.jpg)
 
-https://user-images.githubusercontent.com/126838490/235343059-e479ef9e-0c2b-4261-941b-ea1e777e90eb.jpg
+![WhatsApp Image 2023-04-30 at 12 02 54](https://user-images.githubusercontent.com/126838490/235343279-5d8acf6e-9acc-4c32-9146-b2e62b40729c.jpg)
 
-https://user-images.githubusercontent.com/126838490/235343159-a188265e-993f-437a-b64c-3fea238933b8.jpg
+![WhatsApp Image 2023-04-30 at 12 03 35](https://user-images.githubusercontent.com/126838490/235343283-34aa7c13-b25b-4fa5-ab35-b63c46b20935.jpg)
 
-https://user-images.githubusercontent.com/126838490/235343108-f216c95d-3f93-469a-b9f6-4d72fa66f28b.jpg
+![WhatsApp Image 2023-04-30 at 12 06 28](https://user-images.githubusercontent.com/126838490/235343288-ebe1e679-5eee-4de1-8029-1acdfe501294.jpg)
+
