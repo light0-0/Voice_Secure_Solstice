@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/modal1.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Voice Base Authentication </title>
+</head>
+<body>
+  <div class="container" >
+    <div class="popup" data-aos="fade-down">
+        <!-- <img src="/static/images/404-tick.png" alt="" sizes="" srcset="">
+        <h2>Thank You!</h2>
+        <button type="button">Ok</button> -->
+        {% if id == 2 %}
+          <div>
+            <img src="/static/images/404-tick.png" alt="" sizes="" srcset="">
+            <h2>{{status}}</h2>
+            <button type="button"><a href="/">Go To login Page </a> </button>
+          </div>
+        {% elif id == 1 %}
+          <div>
+            <img src="/static/images/wrong-tick.png" alt="" sizes="" srcset="">
+            <h2>{{status}}</h2>
+            <button style="background-color: red;" ><a href="{{url}}"  >Please Record your Voice again </a> </button>
+          </div>
+        {% elif id == 3 %}
+          <div>
+            <img src="/static/images/404-tick.png" alt="" sizes="" srcset="">
+            <h2>{{status}}</h2>
+            <button style="background-color: red; "><a href="{{url}}">Record Voice </a> </button></center>
+          </div>
+        {% endif %}
+    </div>
+
+
+</div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:2500
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+asgiref==3.6.0
+Django==4.1.4
+PyAudio==0.2.13
+sqlparse==0.4.3
+tzdata==2022.7
+Wave==0.0.2

@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/voice1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <title>Voice Based Authentication</title>
+</head>
+
+<body>
+
+  <div class="center-box">  
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item">Click on start Recording button then  the sentence will appear on the screen read that sentence</li>
+      <li class="list-group-item">Make sue that you properly read that sentence</li>
+      <li class="list-group-item">When you have read that sentence click on stop recording button</li>
+      <li class="list-group-item">Your Voice will be recorded twice for better accuracy</li>
+    </ol>
+  </div>
+
+
+
+    <div class="loaderBox1"></div>
+
+    <div class="controller">
+        <div id="stop" >
+            <div class="diri">
+                <img src="/static/images/expand_less.svg" alt="" srcset="">
+            </div>
+            <div class="diri">
+                <img src="/static/images/expand_less.svg" alt="" srcset="">
+            </div>
+            <div class="diri">
+                <img src="/static/images/expand_less.svg" alt="" srcset="">
+            </div>
+        </div>  
+
+        <div id="start" >
+            <div class="diri">
+                <img src="/static/images/expand_more.svg" alt="" srcset="">
+            </div>
+            <div class="diri">
+                <img src="/static/images/expand_more.svg" alt="" srcset="">
+            </div>
+            <div class="diri">
+                <img src="/static/images/expand_more.svg" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+
+    <div class="toggle">
+        <div class="indicator"></div>
+        <h5>Start</h5>
+        <h5>Stop</h5>
+        
+    </div>
+
+    <script>
+        let startBtn=document.getElementById('start');
+        let stopBtn=document.getElementById('stop');
+        
+        let toggle = document.getElementsByClassName('toggle')[0];
+        let loaderBox1 = document.getElementsByClassName('loaderBox1')[0];
+
+        startBtn.addEventListener("click",function(){
+            window.location.href="{{url}}";
+            toggle.classList.add('active')
+            loaderBox1.classList.add('active')
+        });
+
+        stopBtn.addEventListener("click",function(){
+            toggle.classList.remove('active')
+            loaderBox1.classList.remove('active')
+        });
+
+
+        let btn=document.getElementsByClassName("btn")
+        
+        let count=0
+        function myFunction(){
+            let items=document.getElementsByClassName("step-wizard-item")[count]
+            items.classList.remove("current-item");
+            count++
+            let items1=document.getElementsByClassName("step-wizard-item")[count]
+            items1.classList.add("current-item");
+            
+        };
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+

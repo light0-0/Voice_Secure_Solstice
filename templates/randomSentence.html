@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/voice2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <title>Voice Based Authentication</title>
+</head>
+
+<style>
+
+    .center {
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .wave {
+      width: 5px;
+      height: 100px;
+      background: linear-gradient(45deg, black, #fff);
+      margin: 10px;
+      animation: wave 1s linear infinite;
+      border-radius: 20px;
+    }
+    .wave:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    .wave:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    .wave:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+    .wave:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+    .wave:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+    .wave:nth-child(7) {
+      animation-delay: 0.6s;
+    }
+    .wave:nth-child(8) {
+      animation-delay: 0.7s;
+    }
+    .wave:nth-child(9) {
+      animation-delay: 0.8s;
+    }
+    .wave:nth-child(10) {
+      animation-delay: 0.9s;
+    }
+    
+    @keyframes wave {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+    </style>
+
+<body>
+
+
+
+  <section class="step-wizard">
+    <ul class="step-wizard-list">
+        <li class="step-wizard-item {% if num == 1 %}current-item {% endif %}">
+            <span class="progress-count">1</span>
+            <span class="progress-label">Recording 1</span>
+        </li>
+        <li class="step-wizard-item {% if num == 2 %}current-item {% endif %}" >
+            <span class="progress-count">2</span>
+            <span class="progress-label">Recording 2</span>
+        </li>
+        <li class="step-wizard-item {% if num == 3 %}current-item {% endif %}">
+            <span class="progress-count">3</span>
+            <span class="progress-label">Recording 3</span>
+        </li>
+        <li class="step-wizard-item {% if num == 4 %}current-item {% endif %}">
+            <span class="progress-count">4</span>
+            <span class="progress-label">Recording 4</span>
+        </li>
+        <li class="step-wizard-item {% if num == 5 %}current-item {% endif %}">
+            <span class="progress-count">5</span>
+            <span class="progress-label">Recording 5</span>
+        </li>
+    </ul>
+</section>
+
+<div id="preload" class="center-box">
+  <textarea  disabled  id="floatingTextarea" style="height:12vh; width:85vw">
+    {{sentence}}
+</textarea>
+
+    <div class="loaderBox1 active" style="top: 70%;"></div>
+
+    <div class="controller" style="top: 250px;">
+        <form  action="" method="POST">
+            {% csrf_token %}
+
+        <button  name="stopRecording" type="submit" id="stop"> 
+
+          <div>
+              <div class="diri">
+                  <img src="/static/images/expand_less.svg" alt="" srcset="">
+              </div>
+              <div class="diri">
+                  <img src="/static/images/expand_less.svg" alt="" srcset="">
+              </div>
+              <div class="diri">
+                  <img src="/static/images/expand_less.svg" alt="" srcset="">
+              </div>
+          </div>  
+      </button>
+
+        </form>
+
+        <div id="start" class="active">
+            <div class="diri">
+                <img src="/static/images/expand_more.svg" alt="" srcset="">
+            </div>
+            <div class="diri">
+                <img src="/static/images/expand_more.svg" alt="" srcset="">
+            </div>
+            <div class="diri">
+                <img src="/static/images/expand_more.svg" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="toggle active" style="top: 345px;">
+        <div class="indicator"></div>
+        <h5>Start</h5>
+        <h5>Stop</h5>  
+    </div>
+
+</div>
+
+<div id="afterload" style="display:none">
+    <center><h3><i>Processing Please wait</i></h3></center>
+    <div class="center">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+</div>    
+
+
+    <!-- toggle.classList.add('active') -->
+    <!-- loaderBox1.classList.add('active') -->
+    <script>
+        let startBtn=document.getElementById('start');
+        let stopBtn=document.getElementById('stop');
+        
+        let toggle = document.getElementsByClassName('toggle')[0];
+        let loaderBox1 = document.getElementsByClassName('loaderBox1')[0];
+
+        startBtn.addEventListener("click",function(){
+            window.location.href="{{url}}";
+            
+        });
+
+        stopBtn.addEventListener("click",function(){
+            toggle.classList.remove('active')
+            loaderBox1.classList.remove('active')
+            document.getElementById("preload").style.display="none";
+            document.getElementById("afterload").style.display="block";
+        });
+
+
+        let btn=document.getElementsByClassName("btn")
+        
+        let count="{{num}}"
+        count=parseInt(count)
+
+        if(count!=1){
+            count-=2
+            console.log(count)
+            let items=document.getElementsByClassName("step-wizard-item")[count]
+            items.classList.remove("current-item");
+            count++
+            let items1=document.getElementsByClassName("step-wizard-item")[count]
+            items1.classList.add("current-item");
+        }    
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+
